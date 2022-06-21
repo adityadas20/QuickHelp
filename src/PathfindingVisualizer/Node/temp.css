@@ -1,0 +1,27 @@
+.hola {
+    color: red;
+    /* display: inline; */
+}
+
+.grass {
+    color: #2ad56f;
+}
+
+.report {
+    color: #ffce00;
+}
+
+.lady {
+    color: #0000ff;
+}
+
+p {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+/* 
+.header {
+    margin-top: 0em;
+    padding: 0.5em;
+} */
