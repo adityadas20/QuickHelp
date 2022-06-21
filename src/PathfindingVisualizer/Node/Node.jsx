@@ -1,12 +1,6 @@
-
 import React, { Component } from 'react';
 
 import './Node.css';
-import PregnantWomanIcon from '@mui/icons-material/PregnantWoman';
-import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
-import ReportProblemIcon from '@mui/icons-material/ReportProblem';
-import GrassIcon from '@mui/icons-material/Grass';
-
 import './temp.css'
 
 export default class Node extends Component {
@@ -33,30 +27,32 @@ export default class Node extends Component {
 
         if (extraClassName == 'node-finish') {
             return (<div style={{
-                display: 'inline',
-                // VerticalAlign: 'text-bottom',
-                // BoxSizing: 'inherit',
-                // textAlign: 'center',
-                // AlignItems: 'center'
-            }
-            } ><LocalHospitalIcon display="inline-block" className='hola'></LocalHospitalIcon> </div>);
+                display: 'inline-block'
+
+            }}
+                className='hospital'>
+            </div>);
         }
         else if (extraClassName == 'node-start') {
             return (<div style={{
-                display: 'inline'
+                display: 'inline-block'
             }}
-                sx={{ fontSize: 80 }} className="lady" ><PregnantWomanIcon></PregnantWomanIcon></div>);
+                className="lady" >
+                {/* <PregnantWomanIcon></PregnantWomanIcon> */}
+            </div>);
         }
         else if (extraClassName == 'node-wall') {
             return (<div style={{
-                display: 'inline'
+                display: 'inline-block'
             }}
                 id={`node-${row}-${col}`}
                 className="report"
                 // className={`node ${extraClassName}`}
                 onMouseDown={() => onMouseDown(row, col)}
                 onMouseEnter={() => onMouseEnter(row, col)}
-                onMouseUp={() => onMouseUp()}><ReportProblemIcon></ReportProblemIcon></div>);
+                onMouseUp={() => onMouseUp()}>
+                {/* <ReportProblemIcon></ReportProblemIcon> */}
+            </div>);
         }
         else {
             return (
@@ -69,7 +65,7 @@ export default class Node extends Component {
                     onMouseEnter={() => onMouseEnter(row, col)}
                     onMouseUp={() => onMouseUp()}
                 >
-                    <GrassIcon></GrassIcon>
+                    {/* <GrassIcon className="grassIcon"></GrassIcon> */}
                 </div >
             );
             // </div>

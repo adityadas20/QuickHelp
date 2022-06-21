@@ -4,10 +4,10 @@ import { dijkstra, getNodesInShortestPathOrder } from '../algorithms/dijkstra';
 
 import './PathfindingVisualizer.css';
 
-const START_NODE_ROW = 10;
-const START_NODE_COL = 15;
-const FINISH_NODE_ROW = 10;
-const FINISH_NODE_COL = 35;
+const START_NODE_ROW = 6;
+const START_NODE_COL = 5;
+const FINISH_NODE_ROW = 6;
+const FINISH_NODE_COL = 25;
 
 export default class PathfindingVisualizer extends Component {
     constructor() {
@@ -78,7 +78,7 @@ export default class PathfindingVisualizer extends Component {
 
         return (
             <>
-                <p>Help a pregnant lady reach the hospital. Note that there may be some obstacles in her way! </p>
+                <p>Help a pregnant lady reach the hospital. Your goal is to take her there as quickly as possible, note that there may be some obstacles in her way! </p>
 
                 <button className='header' onClick={() => this.visualizeDijkstra()}>
                     Be the hero and help her
@@ -117,9 +117,9 @@ export default class PathfindingVisualizer extends Component {
 
 const getInitialGrid = () => {
     const grid = [];
-    for (let row = 0; row < 20; row++) {
+    for (let row = 0; row < 12; row++) {
         const currentRow = [];
-        for (let col = 0; col < 50; col++) {
+        for (let col = 0; col < 30; col++) {
             currentRow.push(createNode(col, row));
         }
         grid.push(currentRow);
@@ -150,62 +150,3 @@ const getNewGridWithWallToggled = (grid, row, col) => {
     newGrid[row][col] = newNode;
     return newGrid;
 };
-
-/*import React, { Component } from 'react'
-import Node from './Node/Node';
-
-import './PathfindingVisualizer.css';
-
-
-export default class PathfindingVisualizer extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            nodes: [],
-        };
-    }
-
-    componentDidMount() {
-        const nodes = [];
-        for (let row = 0; row < 20; row++) {
-            const currentRow = [];
-            for (let col = 0; col < 50; col++) {
-                const currentNode = {
-                    col,
-                    row,
-                    isStart: row === 10 && col === 5,
-                    isFinish: row === 10 && col === 45,
-                };
-                currentRow.push(currentNode);
-            }
-            nodes.push(currentRow);
-        }
-        this.setState({ nodes })
-    }
-
-    render() {
-        const { nodes } = this.state;
-        console.log(nodes);
-
-        return (
-            <div className='grid'>
-                {nodes.map((row, rowIdx) => {
-                    return (
-                        <div key={rowIdx}>
-                            {row.map((node, nodeIdx) => {
-                                const { isStart, isFinish } = node;
-                                return (
-                                    <Node
-                                        key={nodeIdx}
-                                        isStart={isStart}
-                                        isFinish={isFinish}
-                                        test={'foo'} ></Node>
-                                );
-                            })}
-                        </div>
-                    );
-                })}
-            </div>
-        );
-    }
-}*/
