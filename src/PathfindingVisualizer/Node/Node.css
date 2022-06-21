@@ -34,7 +34,7 @@
 
     100% {
         transform: scale(1);
-        background-color: #808080;
+        background-color: rgb(247, 212, 148);
     }
 }
 
@@ -63,7 +63,8 @@
 
     100% {
         transform: scale(1);
-        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7IVM9VOvZB3kAx7Wm94f4RK7t1IUm-OWmXg&usqp=CAU');
+        background-image: url('../../imgs/amb.jpg');
+        border-radius: 150px;
         background-size: contain;
         background-repeat: no-repeat;
     }

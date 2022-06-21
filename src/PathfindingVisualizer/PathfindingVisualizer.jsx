@@ -79,12 +79,12 @@ export default class PathfindingVisualizer extends Component {
 
         return (
             <>
-                <p>You being an ambulance driver, need to help a pregnant woman reach the hospital as quickly as possible. Your goal is to take the shortest path to your destination and avoid any boulders that might come your way because it'd obviously affect the baby! One can add boulders by clicking on the grass.</p>
-                <Button variant="contained" className='' onClick={() => this.visualizeDijkstra()}> Be the hero and help her</Button>
-                {/* <button className='header' onClick={() => this.visualizeDijkstra()}>
-                    Be the hero and help her
-                </button> */}
-                <p>(If you want to know what we did to help her; we found the best route using the well know Dijkstra's algorithm. For this, We need to maintain the path distance of every vertex. We can store that in an array of size v, where v is the number of vertices. We also want to be able to get the shortest path, not only know the length of the shortest path. For this, we map each vertex to the vertex that last updated its path length. Once the algorithm is over, we can backtrack from the destination vertex to the source vertex to find the path. For more details about the algorithm, you can visit <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">here</a>)</p>
+                <p>You being an ambulance driver, need to help a pregnant woman reach the hospital as quickly as possible. Your goal is to take the shortest path to your destination and avoid any boulders that might come your way because it'd obviously affect the baby! <span className='underline'>One can add boulders by clicking on the grass.</span></p>
+                {/* <Button variant="contained" className='' onClick={() => this.visualizeDijkstra()}> Be the hero and help her</Button> */}
+                <button className='header' onClick={() => this.visualizeDijkstra()}>
+                    <b>BE THE HERO AND HELP HER</b>
+                </button>
+                <p>(If you want to know what we did to help her; we found the best route using the well know Dijkstra's algorithm. For this, we maintained the path distance of every vertex. We stored that in an array of size v, where v is the number of vertices. For tracking the shortest path, we mapped each vertex to the vertex that last updated its path length. We then backtrack from the destination vertex to the source vertex to find the path. For more details about the algorithm, you can visit <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">here</a>)</p>
                 <div className="grid">
                     {grid.map((row, rowIdx) => {
                         return (
