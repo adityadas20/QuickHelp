@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Node from './Node/Node';
-import Button from '@mui/material/Button';
 import { dijkstra, getNodesInShortestPathOrder } from '../algorithms/dijkstra';
 
 import './PathfindingVisualizer.css';
@@ -80,7 +79,6 @@ export default class PathfindingVisualizer extends Component {
         return (
             <>
                 <p>You being an ambulance driver, need to help a pregnant woman reach the hospital as quickly as possible. Your goal is to take the shortest path to your destination and avoid any boulders that might come your way because it'd obviously affect the baby! <span className='underline'>One can add boulders by clicking on the grass.</span></p>
-                {/* <Button variant="contained" className='' onClick={() => this.visualizeDijkstra()}> Be the hero and help her</Button> */}
                 <button className='header' onClick={() => this.visualizeDijkstra()}>
                     <b>BE THE HERO AND HELP HER</b>
                 </button>
