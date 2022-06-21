@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Node from './Node/Node';
+import Button from '@mui/material/Button';
 import { dijkstra, getNodesInShortestPathOrder } from '../algorithms/dijkstra';
 
 import './PathfindingVisualizer.css';
@@ -78,11 +79,11 @@ export default class PathfindingVisualizer extends Component {
 
         return (
             <>
-                <p>Help a pregnant lady reach the hospital. Your goal is to take her there as quickly as possible, note that there may be some obstacles in her way! </p>
-
-                <button className='header' onClick={() => this.visualizeDijkstra()}>
+                <p>You being an ambulance driver, need to help a pregnant woman reach the hospital as quickly as possible. Your goal is to take the shortest path to your destination and avoid any boulders that might come your way because it'd obviously affect the baby! One can add boulders by clicking on the grass.</p>
+                <Button variant="contained" className='' onClick={() => this.visualizeDijkstra()}> Be the hero and help her</Button>
+                {/* <button className='header' onClick={() => this.visualizeDijkstra()}>
                     Be the hero and help her
-                </button>
+                </button> */}
                 <p>(If you want to know what we did to help her; we found the best route using the well know Dijkstra's algorithm. For this, We need to maintain the path distance of every vertex. We can store that in an array of size v, where v is the number of vertices. We also want to be able to get the shortest path, not only know the length of the shortest path. For this, we map each vertex to the vertex that last updated its path length. Once the algorithm is over, we can backtrack from the destination vertex to the source vertex to find the path. For more details about the algorithm, you can visit <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">here</a>)</p>
                 <div className="grid">
                     {grid.map((row, rowIdx) => {
